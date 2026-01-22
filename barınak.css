@@ -1,0 +1,411 @@
+body {
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f2f4f8;
+  color: #333;
+}
+
+/* HEADER */
+.site-header {
+  padding: 50px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #f7c8e0, #cdb4db);
+}
+
+.site-title {
+  font-size: 52px;
+  letter-spacing: 6px;
+  margin: 0;
+}
+
+/* MAIN */
+.container {
+  max-width: 1100px;
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding: 0 20px;
+}
+
+/* KART ORTAK */
+.info-box,
+.form-box {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* SOL */
+.info-box h2,
+.form-box h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #683688;
+}
+
+.info-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.info-box li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+ .mini-stats {
+  margin-top: 20px;
+  padding: 14px;
+  background: #f6f0fa;
+  border-radius: 12px;
+  font-size: 14px;
+}
+.mini-stats p {
+  margin: 6px 0;
+}
+.why-box {
+  margin-top: 18px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555;
+}
+
+
+/* FORM */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form input,
+form textarea {
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+form button {
+  align-self: flex-start;
+  padding: 10px 22px;
+  border-radius: 20px;
+  border: none;
+  background: #cdb4db;
+  cursor: pointer;
+  transition: 0.2s;
+}
+form button:hover {
+  background: #b392c8;
+  transform: scale(1.05);
+}
+.next-btn {
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.next-btn:hover {
+  transform: scale(1.06);
+}
+
+.next-btn:active {
+  transform: scale(0.92);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+
+/* YORUMLAR */
+.comments {
+  margin-top: 25px;
+}
+
+.comments p {
+  background: #f2f2f2;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+/* FOOTER */
+.site-footer {
+  position: fixed;
+  height: 80px;
+  bottom: 0;
+}
+
+.next-btn {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  padding: 14px 28px;
+  font-size: 16px;
+  border-radius: 30px;
+  border: none;
+  background: #ffafcc;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+/** DOSTLARIMIZLA TANIŞIN BUTONU */
+.meet-btn {
+  position: fixed;          /* ekrana sabit */
+  right: 30px;              /* sağdan boşluk */
+  bottom: 110px;            /* ALTTA ama "İleri →"nin ÜSTÜNDE */
+  
+  padding: 12px 22px;
+  background: #cdb4db;
+  color: #333;
+  text-decoration: none;
+  border-radius: 24px;
+  font-weight: 500;
+
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+/** Hover efekti */
+.meet-btn:hover {
+  transform: scale(1.08);   /* büyüme */
+  background: #b392c8;      /* hafif koyulaşma */
+}
+
+/* LOGO / BAŞLIK */
+.site-title {
+  display: inline-flex;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+
+.site-title span {
+  display: inline-block;
+  font-size: 52px;
+  transition: transform 0.3s ease;
+}
+
+/* Köpek placeholder */
+.site-title .dog {
+  font-size: 42px;
+  margin-left: 10px;
+}
+
+.dog {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+  font-size: 42px;
+  transition: left 0.4s ease, transform 0.4s ease;
+}
+
+.dog.rest {
+  transform: translate(0, -50%) rotate(-10deg) translateY(6px);
+}
+
+
+/* Harf tepkisi */
+.site-title span.active {
+  transform: translateY(-8px) scale(1.05);
+}
+
+.site-title {
+  position: relative;
+  display: inline-block;
+}
+
+.logo-text {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+}
+
+.logo-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.dog {
+  position: absolute;
+  font-size: 42px;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  transition: transform 0.15s ease;
+}
+
+.dog.rest {
+  transform: translate(-50%, -50%) rotate(-12deg) translateY(6px);
+}
+.site-title {
+  animation: breathe 4s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.015); }
+}
+.info-box,
+.form-box {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.info-box:hover,
+.form-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.12);
+}
+
+
+
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #f7c8e0, #cdb4db);
+}
+
+/* GALERİ */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 22px;
+  padding: 40px;
+}
+
+/* KÖPEK KARTI */
+.dog-card {
+  margin-top: 50px;
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: transform 0.25s ease;
+}
+
+/* Instagram post hissi */
+.dog-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  position: relative;
+}
+
+/* ALT BİLGİ */
+.dog-info {
+  padding: 12px;
+  text-align: center;
+}
+
+.dog-info h3 {
+  margin: 6px 0 2px;
+}
+
+.dog-info p {
+  font-size: 13px;
+  color: #555;
+}
+
+/* HOVER */
+.dog-card:hover {
+  transform: translateY(-6px);
+}
+
+/* AKTİF (MERKEZE GELEN) */
+.dog-card.active {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 360px;
+  transform: translate(-50%, -50%) scale(1.15);
+  z-index: 10;
+}
+
+/* ARKA PLAN KARARTMA */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.overlay.show {
+  opacity: 1;
+  pointer-events: all;
+}
+/* FİLTRE BAR */
+.filter-bar {
+  display: flex;
+  gap: 12px;
+  padding: 20px 40px 0;
+}
+
+.filter-bar select {
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: none;
+  background: white;
+  font-size: 14px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+/* FAVORİ BUTONU */
+.fav-btn {
+  position:relative;
+  top: 10px;
+  left: 10px;
+  
+  border: none;
+  background: white;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.fav-btn.active {
+  color: crimson;
+}
+
+/* ===== MOBİL DÜZENLEMELER (TÜM SORUNLAR İÇİN) ===== */
+
+@media (max-width: 768px) {
+  /* 1. Başlık Yazı Boyutunu Azaltma (Üst üste binmeyi önler) */
+  .site-title span {
+    font-size: 32px; /* 52px'den 32px'e düşürdük */
+  }
+
+  .site-title .dog {
+    font-size: 28px; /* Köpeği de harflerle uyumlu küçülttük */
+  }
+
+  /* 2. Sayfada Tıklanan Kartın Büyüme Boyutu */
+  .dog-card.active {
+    width: 85%; /* Ekranın %85'ini kaplasın, dışarı taşmasın */
+    transform: translate(-50%, -50%) scale(1); /* Scale 1.15 çok büyüktü, 1 yaptık */
+  }
+
+  /* Ana sayfadaki kolonları alt alta getir (Daha düzenli durur) */
+  .container {
+    grid-template-columns: 1fr;
+    margin: 20px auto;
+  }
+  
+  /* Butonların yerleşimi */
+  .meet-btn {
+    right: 20px;
+    bottom: 40px; /* Mobilde konumu biraz düzelttik */
+  }
+}
+

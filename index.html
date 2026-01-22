@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barınak Sitesi</title>
+  <link rel="icon" href="icon.jpg">
+  <link rel="stylesheet" href="barınak.css">
+</head>
+<body>
+
+  <!-- ===== HEADER / BAŞLIK ===== -->
+  <header class="site-header">
+    <h1 class="site-title" id="logo">
+      <!-- Harfler ayrı ayrı: animasyon için -->
+      <span>Y</span>
+      <span>U</span>
+      <span>V</span>
+      <span>A</span>
+      <span>&nbsp;</span>
+      <span>O</span>
+      <span>L</span>
+
+      <!-- Köpek -->
+      <span class="dog">🐕</span>
+    </h1>
+  </header>
+
+  <!-- ===== ANA ALAN ===== -->
+  <main class="container">
+
+    <!-- === SOL KOLON === -->
+    <section class="left-column">
+
+      <!-- Bilgi kutusu -->
+      <div class="info-box">
+
+        <h2>Barınak Hakkında</h2>
+        <ul>
+          <li><strong>Hayvan Sayısı:</strong> 42</li>
+          <li><strong>Konum:</strong> İzmir</li>
+          <li><strong>Kısa Özet:</strong> Sahipsiz canlar için güvenli alan</li>
+          <li><strong>Kuruluş:</strong> 2015 – Gönüllüler tarafından</li>
+        </ul>
+
+      <!-- Mini istatistikler -->
+      <div class="mini-stats">
+        <p>🐶 Bugün mama verilen: <strong>18</strong></p>
+        <p>🐱 Tedavisi devam eden: <strong>5</strong></p>
+        <p>🏡 Sahiplenmeyi bekleyen: <strong>27</strong></p>
+      </div>
+      <br>
+      <!-- Neden buradayız -->
+      <div class="why-box">
+        <h4>Neden Buradayız?</h4>
+        <p>
+          Yuva Ol, Sahipsiz hayvanların güvenle yaşayabileceği bir alan
+          oluşturmak için gönüllüler tarafından kuruldu.
+          Her patinin bir hikâyesi olduğuna inanıyoruz.Sende kendi hikayeni  bir dost
+          ile paylaşmak ister misin.<br>
+          Hazırsan başlayalım
+        </p>
+      </div>
+      </div>
+    </section>
+
+    <!-- === SAĞ KOLON === -->
+    <section class="form-box">
+      <h2>Deneyimini Paylaş</h2>
+
+      <form>
+        <input type="text" placeholder="İsim Soyisim" />
+        <input type="email" placeholder="E-mail" />
+        <textarea placeholder="Barınak hakkındaki deneyimin..."></textarea>
+        <button type="submit">Gönder</button>
+      </form>
+
+      <div class="comments">
+        <h3>Yorumlar</h3>
+        <p>🐾 Çok ilgili bir ekipti.</p>
+        <p>🐾 Sahiplendirme süreci çok güzeldi.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    
+    <a href="köpekler.html" class="meet-btn">
+  Dostlarımızla Tanışın 🐾
+</a>
+
+  </footer>
+
+  <!-- ===== LOGO ANİMASYONU ===== -->
+  <script>
+    /** Logo ve elemanları alıyoruz */
+    const logo = document.getElementById("logo");
+    const letters = logo.querySelectorAll("span:not(.dog)");
+    const dog = logo.querySelector(".dog");
+
+    /** Animasyonu oynatan fonksiyon */
+    function playAnimation() {
+      dog.classList.remove("rest");
+
+      letters.forEach((letter, index) => {
+        setTimeout(() => {
+          /** Harfi zıplat */
+          letter.classList.add("active");
+
+          /** Köpeği harfin altına getir */
+          const rect = letter.getBoundingClientRect();
+          const logoRect = logo.getBoundingClientRect();
+          /** Köpeği harfin biraz sağına koy */
+       dog.style.left = rect.left - logoRect.left + rect.width + 6 + "px";
+
+
+          /** Harfi eski haline döndür */
+          setTimeout(() => {
+            letter.classList.remove("active");
+          }, 300);
+
+        }, index * 250);
+      });
+
+      /** Animasyon bitince köpek dinlensin */
+      setTimeout(() => {
+        dog.classList.add("rest");
+      }, letters.length * 250 + 200);
+    }
+
+    /** Sayfa açılınca */
+    window.addEventListener("load", playAnimation);
+
+    /** Başlığa tıklanınca */
+    logo.addEventListener("click", playAnimation);
+  </script>
+
+</body>
+</html>
