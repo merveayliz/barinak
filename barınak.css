@@ -9,7 +9,7 @@ body {
   color: #333;
 }
 
-/* HEADER */
+
 .site-header {
   padding: 50px 20px;
   text-align: center;
@@ -22,7 +22,7 @@ body {
   margin: 0;
 }
 
-/* MAIN */
+
 .container {
   max-width: 1100px;
   margin: 40px auto;
@@ -32,7 +32,7 @@ body {
   padding: 0 20px;
 }
 
-/* KART ORTAK */
+
 .info-box,
 .form-box {
   background: white;
@@ -41,7 +41,7 @@ body {
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
-/* SOL */
+
 .info-box h2,
 .form-box h2 {
   margin-top: 0;
@@ -76,7 +76,7 @@ body {
 }
 
 
-/* FORM */
+
 form {
   display: flex;
   flex-direction: column;
@@ -122,7 +122,6 @@ form button:hover {
 }
 
 
-/* YORUMLAR */
 .comments {
   margin-top: 25px;
 }
@@ -154,11 +153,11 @@ form button:hover {
   transition: transform 0.1s ease, box-shadow 0.1s ease;
   box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
-/** DOSTLARIMIZLA TANIŞIN BUTONU */
+
 .meet-btn {
-  position: fixed;          /* ekrana sabit */
-  right: 30px;              /* sağdan boşluk */
-  bottom: 110px;            /* ALTTA ama "İleri →"nin ÜSTÜNDE */
+  position: fixed;          
+  right: 30px;             
+  bottom: 110px;            
   
   padding: 12px 22px;
   background: #cdb4db;
@@ -171,13 +170,13 @@ form button:hover {
   transition: transform 0.2s ease, background 0.2s ease;
 }
 
-/** Hover efekti */
+
 .meet-btn:hover {
-  transform: scale(1.08);   /* büyüme */
-  background: #b392c8;      /* hafif koyulaşma */
+  transform: scale(1.08); 
+  background: #b392c8;     
 }
 
-/* LOGO / BAŞLIK */
+
 .site-title {
   display: inline-flex;
   position: relative;
@@ -191,7 +190,7 @@ form button:hover {
   transition: transform 0.3s ease;
 }
 
-/* Köpek placeholder */
+
 .site-title .dog {
   font-size: 42px;
   margin-left: 10px;
@@ -211,7 +210,7 @@ form button:hover {
 }
 
 
-/* Harf tepkisi */
+
 .site-title span.active {
   transform: translateY(-8px) scale(1.05);
 }
@@ -272,7 +271,7 @@ body {
   background: linear-gradient(135deg, #f7c8e0, #cdb4db);
 }
 
-/* GALERİ */
+
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -280,7 +279,7 @@ body {
   padding: 40px;
 }
 
-/* KÖPEK KARTI */
+
 .dog-card {
   margin-top: 50px;
   background: white;
@@ -291,7 +290,7 @@ body {
   transition: transform 0.25s ease;
 }
 
-/* Instagram post hissi */
+
 .dog-card img {
   width: 100%;
   aspect-ratio: 1 / 1;
@@ -299,7 +298,7 @@ body {
   position: relative;
 }
 
-/* ALT BİLGİ */
+
 .dog-info {
   padding: 12px;
   text-align: center;
@@ -314,12 +313,12 @@ body {
   color: #555;
 }
 
-/* HOVER */
+
 .dog-card:hover {
   transform: translateY(-6px);
 }
 
-/* AKTİF (MERKEZE GELEN) */
+
 .dog-card.active {
   position: fixed;
   top: 50%;
@@ -329,7 +328,7 @@ body {
   z-index: 10;
 }
 
-/* ARKA PLAN KARARTMA */
+
 .overlay {
   position: fixed;
   inset: 0;
@@ -343,7 +342,7 @@ body {
   opacity: 1;
   pointer-events: all;
 }
-/* FİLTRE BAR */
+
 .filter-bar {
   display: flex;
   gap: 12px;
@@ -358,7 +357,7 @@ body {
   font-size: 14px;
   box-shadow: 0 6px 15px rgba(0,0,0,0.15);
 }
-/* FAVORİ BUTONU */
+
 .fav-btn {
   position:relative;
   top: 10px;
@@ -378,34 +377,34 @@ body {
   color: crimson;
 }
 
-/* ===== MOBİL DÜZENLEMELER (TÜM SORUNLAR İÇİN) ===== */
 
 @media (max-width: 768px) {
-  /* 1. Başlık Yazı Boyutunu Azaltma (Üst üste binmeyi önler) */
+ 
   .site-title span {
-    font-size: 32px; /* 52px'den 32px'e düşürdük */
+    font-size: 32px; 
   }
 
   .site-title .dog {
-    font-size: 28px; /* Köpeği de harflerle uyumlu küçülttük */
+    font-size: 28px; 
   }
 
-  /* 2. Sayfada Tıklanan Kartın Büyüme Boyutu */
+ 
   .dog-card.active {
-    width: 85%; /* Ekranın %85'ini kaplasın, dışarı taşmasın */
-    transform: translate(-50%, -50%) scale(1); /* Scale 1.15 çok büyüktü, 1 yaptık */
+    width: 85%; 
+    transform: translate(-50%, -50%) scale(1); 
   }
 
-  /* Ana sayfadaki kolonları alt alta getir (Daha düzenli durur) */
+ 
   .container {
     grid-template-columns: 1fr;
     margin: 20px auto;
   }
   
-  /* Butonların yerleşimi */
+ 
   .meet-btn {
     right: 20px;
-    bottom: 40px; /* Mobilde konumu biraz düzelttik */
+    bottom: 40px;
   }
 }
+
 
