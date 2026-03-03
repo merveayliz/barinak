@@ -8,11 +8,9 @@
   <link rel="stylesheet" href="barınak.css">
 </head>
 <body>
-
-  <!-- ===== HEADER / BAŞLIK ===== -->
   <header class="site-header">
     <h1 class="site-title" id="logo">
-      <!-- Harfler ayrı ayrı: animasyon için -->
+      
       <span>Y</span>
       <span>U</span>
       <span>V</span>
@@ -21,18 +19,13 @@
       <span>O</span>
       <span>L</span>
 
-      <!-- Köpek -->
+      
       <span class="dog">🐕</span>
     </h1>
   </header>
 
-  <!-- ===== ANA ALAN ===== -->
   <main class="container">
-
-    <!-- === SOL KOLON === -->
     <section class="left-column">
-
-      <!-- Bilgi kutusu -->
       <div class="info-box">
 
         <h2>Barınak Hakkında</h2>
@@ -43,14 +36,13 @@
           <li><strong>Kuruluş:</strong> 2015 – Gönüllüler tarafından</li>
         </ul>
 
-      <!-- Mini istatistikler -->
       <div class="mini-stats">
         <p>🐶 Bugün mama verilen: <strong>18</strong></p>
         <p>🐱 Tedavisi devam eden: <strong>5</strong></p>
         <p>🏡 Sahiplenmeyi bekleyen: <strong>27</strong></p>
       </div>
       <br>
-      <!-- Neden buradayız -->
+    
       <div class="why-box">
         <h4>Neden Buradayız?</h4>
         <p>
@@ -63,8 +55,6 @@
       </div>
       </div>
     </section>
-
-    <!-- === SAĞ KOLON === -->
     <section class="form-box">
       <h2>Deneyimini Paylaş</h2>
 
@@ -84,7 +74,7 @@
 
   </main>
 
-  <!-- ===== FOOTER ===== -->
+
   <footer class="site-footer">
     
     <a href="köpekler.html" class="meet-btn">
@@ -93,30 +83,28 @@
 
   </footer>
 
-  <!-- ===== LOGO ANİMASYONU ===== -->
+  
   <script>
-    /** Logo ve elemanları alıyoruz */
+    
     const logo = document.getElementById("logo");
     const letters = logo.querySelectorAll("span:not(.dog)");
     const dog = logo.querySelector(".dog");
 
-    /** Animasyonu oynatan fonksiyon */
+   
     function playAnimation() {
       dog.classList.remove("rest");
 
       letters.forEach((letter, index) => {
         setTimeout(() => {
-          /** Harfi zıplat */
+        
           letter.classList.add("active");
 
-          /** Köpeği harfin altına getir */
+       
           const rect = letter.getBoundingClientRect();
           const logoRect = logo.getBoundingClientRect();
-          /** Köpeği harfin biraz sağına koy */
+         
        dog.style.left = rect.left - logoRect.left + rect.width + 6 + "px";
 
-
-          /** Harfi eski haline döndür */
           setTimeout(() => {
             letter.classList.remove("active");
           }, 300);
@@ -124,18 +112,19 @@
         }, index * 250);
       });
 
-      /** Animasyon bitince köpek dinlensin */
+     
       setTimeout(() => {
         dog.classList.add("rest");
       }, letters.length * 250 + 200);
     }
 
-    /** Sayfa açılınca */
+   
     window.addEventListener("load", playAnimation);
 
-    /** Başlığa tıklanınca */
+   
     logo.addEventListener("click", playAnimation);
   </script>
 
 </body>
 </html>
+
